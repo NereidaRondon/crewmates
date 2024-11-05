@@ -1,0 +1,269 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.ship {
+  margin: 4rem auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+nav {
+  width: 100%;
+  background-color: #333;
+  padding: 1em 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background-color: #1a1a1a;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 5rem;
+}
+
+input[type='text'],
+select,
+button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 100%;
+}
+
+input[type='text']:focus,
+select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0px 0px 5px rgba(74, 144, 226, 0.5);
+}
+
+button {
+  background-color: #4a90e2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #357abf;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* src/components/CrewmateList.css */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li .crew-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(1, 4, 160, 0.1);
+}
+
+li a {
+  text-align: center;
+  color: #4a90e2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e74c3c;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+}
+
+.radio-group input[type='radio'] {
+  margin-right: 8px;
+}
+
+.crewmate-details {
+  margin: 5rem auto;
+}
+.crewmate-details p {
+  margin: 1rem auto;
+}
+
+.crewmate-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 5rem 1rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.crewmate-card {
+  width: 200px;
+  border: 5px solid;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #161616;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.crewmate-card:hover {
+  transform: translateY(-5px);
+}
+
+.crewmate-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.crewmate-name:hover {
+  text-decoration: underline;
+}
+
+.crewmate-card p {
+  margin: 5px 0;
+}
+
+.crewmate-card button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e74c3c;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.crewmate-card button:hover {
+  background-color: #c0392b;
+}
+
+.crewmate-card a {
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.crewmate-card a:hover {
+  text-decoration: underline;
+}
+
+/* src/components/CrewmateList.css */
+
+.crewmate-card .edit-button {
+  padding: 5px 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.crewmate-card .edit-button {
+  background-color: #3498db;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.crewmate-card .edit-button:hover {
+  background-color: #15659b;
+}
+
+.edit-crewmate {
+  margin: 3rem auto;
+}
+
+.crew-list-title {
+  margin-top: 4rem;
+  text-align: center;
+}
