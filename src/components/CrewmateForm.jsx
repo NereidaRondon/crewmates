@@ -4,20 +4,30 @@ import shipImage from '../assets/ship.png';
 
 const CrewmateForm = () => {
   const [name, setName] = useState('');
-  const [role, setRole] = useState('');
+  const [pet, setPet] = useState('');
+  const [role, setRole] = useState('Deckhand'); // Default role
   const [theme, setTheme] = useState('red');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { data, error } = await supabase.from('crewmates').insert([{ name, role, theme }]);
+    // Insert the crewmate data, with pet set to null if it's empty
+    const { data, error } = await supabase.from('crewmates').insert([
+      {
+        name,
+        pet: pet || null, // Set pet to null if the field is empty
+        role,
+        theme,
+      },
+    ]);
 
     if (error) {
       console.error('Error creating crewmate:', error.message);
     } else {
       console.log('Crewmate created:', data);
       setName('');
-      setRole('');
+      setPet('');
+      setRole('Deckhand'); // Reset to default role
       setTheme('red');
     }
   };
@@ -32,21 +42,39 @@ const CrewmateForm = () => {
       />
       <h1 className='title'>Black Beard's Crew</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          placeholder='Name'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type='text'
-          placeholder='Role'
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-        />
-
+        <label>
+          Name:
+          <input
+            type='text'
+            placeholder='Name'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
+        <label>
+          Role:
+          <select value={role} onChange={(e) => setRole(e.target.value)}>
+            <option value='Captain'>Captain</option>
+            <option value='First Mate'>First Mate</option>
+            <option value='Navigator'>Navigator</option>
+            <option value='Gunner'>Gunner</option>
+            <option value='Quartermaster'>Quartermaster</option>
+            <option value='Powder Monkey'>Powder Monkey</option>
+            <option value='Deckhand'>Deckhand</option>
+            <option value='Cook'>Cook</option>
+          </select>
+        </label>
+        <label>
+          Pet:
+          <input
+            type='text'
+            placeholder='Pet'
+            value={pet}
+            onChange={(e) => setPet(e.target.value)}
+          />
+        </label>
         <div className='radio-group'>
-          <p>Theme:</p>
+          <p>Choose a Theme color:</p>
           {['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'].map((color) => (
             <label key={color}>
               <input

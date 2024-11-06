@@ -38,11 +38,9 @@ function CrewmateList() {
               {crewmate.name} →
             </Link>
             <p>
-              <strong>Role:</strong> {crewmate.role}
+              <strong>{crewmate.role}</strong>
             </p>
-            <p>
-              <strong>Theme:</strong> {crewmate.theme}
-            </p>
+
             <Link to={`/edit/${crewmate.id}`} className='edit-button'>
               Edit
             </Link>
